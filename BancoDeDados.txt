@@ -1,0 +1,37 @@
+create database hotel;
+
+use hotel;
+
+create table quartos(
+	id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    numero VARCHAR(50) NOT NULL,
+    tipo VARCHAR(50) NOT NULL,
+    disponivel BOOLEAN NOT NULL
+);
+
+
+create table reservas(
+	id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    nomeCliente VARCHAR(50) NOT NULL,
+    numero VARCHAR(50) NOT NULL,
+    checkIn VARCHAR(50) NOT NULL,
+    checkOut VARCHAR(255) NOT NULL
+);
+
+INSERT INTO quartos (numero, tipo, disponivel) 
+VALUES ('10', 'Suite', true);
+
+INSERT INTO quartos (numero, tipo, disponivel) 
+VALUES ('157', 'Suite Master', true);
+
+INSERT INTO quartos (numero, tipo, disponivel) 
+VALUES ('11', 'Suite Master', false);
+
+INSERT INTO reservas (nome, numero, tipo, checkIn, checkOut) 
+VALUES ('Vittor', '157', 'Suite Master', '10/05/2023', '15/05/2023');
+
+select * from quartos;
+select * from reservas;
+
+drop table quartos;
+drop table reservas;
